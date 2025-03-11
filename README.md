@@ -71,8 +71,8 @@
 ## 📊 GitHub Stats  
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=YourGitHubUsername&show_icons=true&bg_color=000000&text_color=ffffff&icon_color=ff0000&title_color=ff0000" alt="GitHub Stats" width="48%"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=YourGitHubUsername&background=000000&border=ffffff&stroke=ff0000&ring=ff0000&fire=ffffff&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=ff0000&sideLabels=ff0000" alt="GitHub Streak Stats" width="48%"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=RamprakashRP&show_icons=true&bg_color=000000&text_color=ffffff&icon_color=ff0000&title_color=ff0000" alt="GitHub Stats" width="48%"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=RamprakashRP&background=000000&border=ffffff&stroke=ff0000&ring=ff0000&fire=ffffff&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=ff0000&sideLabels=ff0000" alt="GitHub Streak Stats" width="48%"/>
 </p>
 
 ---
