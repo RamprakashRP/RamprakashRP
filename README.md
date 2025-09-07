@@ -18,7 +18,7 @@
     Hello, world! I'm a tech enthusiast specializing in **AI/ML**, a dedicated event organizer, and a creative project leader. When I'm not coding, you'll find me brainstorming innovative ideas, hosting workshops, or collaborating on impactful projects.
 
     ### 🔍 Fun Facts:  
-    - 🏫 **Google Student Ambassador, ** **Microsoft Student Ambassador** and **NIC Club President**  
+    - 🏫 Google Student Ambassador, Microsoft Student Ambassador and NIC Club President  
     - 💡 Innovator behind solutions like the RTF-to-JSON converter and internal hospital management systems  
     - 🎉 Leading **Genesis'24**, a national tech symposium, as its coordinator  
   </div>
