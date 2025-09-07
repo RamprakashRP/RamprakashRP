@@ -5,7 +5,7 @@
 
 <h1 align="center"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="50"> Hi there! I'm **Ramprakash R**</h1>
 
-🎓 **3rd Year B.Tech | Computer Science | AI & ML**  
+🎓 **Final Year B.Tech | Computer Science | AI & ML**  
 💻 **Coding, Organizing & Leadership Enthusiast**  
 🚀 Passionate about **Tech Innovations & Problem-Solving**  
 
@@ -18,7 +18,7 @@
     Hello, world! I'm a tech enthusiast specializing in **AI/ML**, a dedicated event organizer, and a creative project leader. When I'm not coding, you'll find me brainstorming innovative ideas, hosting workshops, or collaborating on impactful projects.
 
     ### 🔍 Fun Facts:  
-    - 🏫 **Class Representative** and **NIC Club Joint Secretary**  
+    - 🏫 **Google Student Ambassador, ** **Microsoft Student Ambassador** and **NIC Club President**  
     - 💡 Innovator behind solutions like the RTF-to-JSON converter and internal hospital management systems  
     - 🎉 Leading **Genesis'24**, a national tech symposium, as its coordinator  
   </div>
