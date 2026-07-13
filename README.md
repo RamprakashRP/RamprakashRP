@@ -3,7 +3,7 @@
   <img src="1.gif" width="1500" height="300">
 </p>
 
-<h1 align="center"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="50"> Hi there! I'm **Ramprakash R**</h1>
+<h1 align="center"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="50"> Hi there! I'm **Ramprakash Raja**</h1>
 
 🎓 **Final Year B.Tech | Computer Science | AI & ML**  
 💻 **Coding, Organizing & Leadership Enthusiast**  
