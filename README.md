@@ -1,12 +1,5 @@
-<!-- Banner GIF -->
 <p align="center">
   <img src="1.gif" width="1500" height="300">
-</p>
-
-<h1 align="center"><img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="50"> Hi there! I'm Ramprakash Raja</h1>
-
-<p align="center">
-  <b>AI Engineer | Vector AI Scholar | MDSAI Co-op @ UWaterloo | Google & Microsoft Student Ambassador</b>
 </p>
 
 <p align="center">
@@ -15,67 +8,77 @@
   </a>
 </p>
 
+<div align="center">
+  <img src="1.gif" width="100%" height="250">
+  
+  <h1>Hi there! I'm Ramprakash Raja 👋</h1>
+
+  <!-- Animated Typing Text -->
+  <a href="https://ramprakashraja.dev">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00FFCC&center=true&vCenter=true&width=800&lines=AI+Engineer+;+Vector+AI+Scholar+(1+of+100+in+Canada);+MDSAI+Co-op+@+UWaterloo;+Google+%26+Microsoft+Student+Ambassador" alt="Typing SVG" />
+  </a>
+  <br>
+  <a href="https://ramprakashraja.dev" target="_blank">
+    <img src="https://img.shields.io/badge/🌐_Visit_My_Portfolio-ramprakashraja.dev-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
+  </a>
+</div>
+
 ---
 
-<h2 align="left"><img src="https://media.giphy.com/media/VgCDAzcKvsR6OM0uWg/giphy.gif" width="50"> About Me</h2>
-
-I am an **AI Engineer** and a **Vector AI Scholar** (1 of only 100 selected in Canada by the Vector Institute). Currently in my final year of engineering at SRM IST, I am headed to the **University of Waterloo** for my Master of Data Science and Artificial Intelligence (MDSAI) program. 
-
-Beyond coding and training machine learning models, I am deeply passionate about community building. I actively serve as a **Top 6 Google Student Ambassador (India)** and a **Microsoft Student Ambassador**, empowering the next generation of developers to build innovative tech ecosystems.
-
-### 🏆 Recognitions & Awards
-- **Vector Scholarship in Artificial Intelligence** — [Official Announcement](https://vectorinstitute.ai/research-talent/students/scholarships/) | [UWaterloo Feature](https://www.linkedin.com/posts/faculty-of-math_congratulations-to-the-incoming-data-science-activity-7472634210563055616-OFhe)
-- **Top 6 Google Student Ambassador (India)** — Met with Google CEO Sundar Pichai at the India AI Impact Summit
-- **Best Outgoing Student (2022-2026)** — SRM Institute of Science and Technology
-- **Winning Candidate** — AI Film Festival Dubai
-
+<h2 align="center">🏆 GitHub Achievements & Trophies</h2>
 <p align="center">
-  <b>👉 Discover my deep-dive projects, case studies, and achievements on my interactive portfolio: <br><a href="https://ramprakashraja.dev">ramprakashraja.dev</a></b>
+  <a href="https://github.com/ryo-ma/github-profile-trophy">
+    <img src="https://github-profile-trophy.vercel.app/?username=RamprakashRP&theme=radical&no-frame=true&no-bg=true&margin-w=15" alt="Trophies" />
+  </a>
 </p>
 
 ---
 
-## 🛠️ Tech Stack & Expertise
-
-<p align="left">
-  <b>AI & Machine Learning</b><br>
-  <a href="https://www.python.org" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/></a>
-  <a href="https://pytorch.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="40" height="40"/></a>
-  <a href="https://tensorflow.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="40" height="40"/></a>
-</p>
-
-<p align="left">
-  <b>Full-Stack Web Development</b><br>
-  <a href="https://reactjs.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" width="40" height="40"/></a>
-  <a href="https://nextjs.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg" alt="Next.js" width="40" height="40" style="filter: invert(1);"/></a>
-  <a href="https://tailwindcss.com/" target="_blank"><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" width="40" height="40"/></a>
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="40" height="40"/></a>
-  <a href="https://www.typescriptlang.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="40" height="40"/></a>
-</p>
-
-<p align="left">
-  <b>Cloud & Databases</b><br>
-  <a href="https://aws.amazon.com" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="40" height="40"/></a>
-  <a href="https://cloud.google.com" target="_blank"><img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="Google Cloud" width="40" height="40"/></a>
-  <a href="https://www.postgresql.org" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL" width="40" height="40"/></a>
-  <a href="https://supabase.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40"/></a>
-</p>
-
----
-
-## 📊 GitHub Analytics
-
+<h2 align="center">🐍 GitHub Contribution Snake</h2>
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=RamprakashRP&show_icons=true&bg_color=000000&text_color=ffffff&icon_color=00ffcc&title_color=00ffcc&hide_border=true" alt="GitHub Stats" width="48%"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=RamprakashRP&background=000000&border=000000&stroke=00ffcc&ring=00ffcc&fire=ffffff&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=00ffcc&sideLabels=00ffcc" alt="GitHub Streak Stats" width="48%"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/dist/github-contribution-grid-snake.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/dist/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/dist/github-contribution-grid-snake.svg">
+  </picture>
 </p>
+
+---
+
+## ⚡ Analytics & Top Languages
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github-readme-stats.vercel.app/api?username=RamprakashRP&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
+      </td>
+      <td align="center">
+        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RamprakashRP&layout=compact&theme=radical&hide_border=true&bg_color=0D1117" alt="Top Languages" />
+      </td>
+    </tr>
+  </table>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=RamprakashRP&theme=radical&hide_border=true&background=0D1117" alt="GitHub Streak Stats" />
+</div>
+
+---
+
+<h2 align="left">🏅 Official Recognitions</h2>
+<ul>
+  <li><b>Vector Scholarship in Artificial Intelligence</b> — <a href="https://vectorinstitute.ai/research-talent/students/scholarships/">Official Announcement</a> | <a href="https://www.linkedin.com/posts/faculty-of-math_congratulations-to-the-incoming-data-science-activity-7472634210563055616-OFhe">UWaterloo Feature</a></li>
+  <li><b>Top 6 Google Student Ambassador (India)</b> — Met with Google CEO Sundar Pichai at the India AI Impact Summit</li>
+  <li><b>Best Outgoing Student (2022-2026)</b> — SRM Institute of Science and Technology</li>
+</ul>
 
 ---
 
 ## 📫 Let's Connect
 
-- 🌐 **Portfolio & Case Studies**: [ramprakashraja.dev](https://ramprakashraja.dev)
-- 💼 **LinkedIn**: [Ramprakash Raja](https://www.linkedin.com/in/ramprakashraja)
+<p align="center">
+  <a href="https://ramprakashraja.dev"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
+  <a href="https://linkedin.com/in/ramprakashraja"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+  <a href="mailto:contact@ramprakashraja.dev"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+</p>
 
 <br>
 <h2 align="center">"Code. Organize. Inspire. Repeat."</h2>
