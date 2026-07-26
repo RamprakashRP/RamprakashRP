@@ -14,10 +14,6 @@
   <img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" />
 </a>
 
-<br><br>
-
-<img src="1.gif" width="100%" height="auto" alt="Banner" />
-
 </div>
 
 <br><br>
