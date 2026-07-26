@@ -10,9 +10,32 @@
 
 <br>
 
-<a href="https://ramprakashraja.dev" target="_blank">
-  <img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" />
-</a>
+<h3><code>ram@github ~ $ cat about_me.txt</code></h3>
+<p align="center">
+  Hey, I'm Ramprakash! 👋 I'm an AI Engineer, Freelancer, and a Vector AI Scholar (1 of 100 in Canada) currently incoming as an MDSAI Co-op at UWaterloo. I am deeply passionate about artificial intelligence, community building, and crafting futuristic tech experiences. As a Google & Microsoft Student Ambassador, I love connecting with the community—I even had the honor of meeting Google CEO Sundar Pichai! When I'm not training models, I'm building cool open-source projects.
+</p>
+
+<br>
+
+<p align="center">
+  <a href="https://ramprakashraja.dev" target="_blank">
+    <img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://linkedin.com/in/yourlinkedin" target="_blank">
+    <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt="LinkedIn" />
+  </a>&nbsp;&nbsp;
+  <a href="https://instagram.com/yourinstagram" target="_blank">
+    <img src="https://skillicons.dev/icons?i=instagram&theme=dark" alt="Instagram" />
+  </a>&nbsp;&nbsp;
+  <a href="mailto:your.email@example.com">
+    <img src="https://skillicons.dev/icons?i=gmail&theme=dark" alt="Email" />
+  </a>
+</p>
+
+<br><br>
 
 </div>
 
