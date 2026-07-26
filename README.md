@@ -23,7 +23,7 @@
 <br><br>
 
 <h3><code>ram@github ~ $ ./contributions.sh</code></h3>
-<img src="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/main/profile-3d-contrib/profile-night-view.svg" alt="3D Isometric Commit Graph" />
+<img src="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Isometric Commit Graph" />
 
 <br><br>
 
