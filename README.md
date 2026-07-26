@@ -24,13 +24,13 @@
 </p>
 
 <p align="center">
-  <a href="https://linkedin.com/in/yourlinkedin" target="_blank">
+  <a href="https://www.linkedin.com/in/ramprakashraja" target="_blank">
     <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt="LinkedIn" />
   </a>&nbsp;&nbsp;
-  <a href="https://instagram.com/yourinstagram" target="_blank">
+  <a href="https://www.instagram.com/ramprakash.raja_2004" target="_blank">
     <img src="https://skillicons.dev/icons?i=instagram&theme=dark" alt="Instagram" />
   </a>&nbsp;&nbsp;
-  <a href="mailto:your.email@example.com">
+  <a href="mailto:ramprakashraja1@gmail.com">
     <img src="https://skillicons.dev/icons?i=gmail&theme=dark" alt="Email" />
   </a>
 </p>
