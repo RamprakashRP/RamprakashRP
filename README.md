@@ -8,77 +8,106 @@
   </a>
 </p>
 
-<div align="center">
-  <img src="1.gif" width="100%" height="250">
-  
-  <h1>Hi there! I'm Ramprakash Raja 👋</h1>
+```python
+import ai
+from developer import RamprakashRaja
 
-  <!-- Animated Typing Text -->
-  <a href="https://ramprakashraja.dev">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00FFCC&center=true&vCenter=true&width=800&lines=AI+Engineer+;+Vector+AI+Scholar+(1+of+100+in+Canada);+MDSAI+Co-op+@+UWaterloo;+Google+%26+Microsoft+Student+Ambassador" alt="Typing SVG" />
-  </a>
-  <br>
-  <a href="https://ramprakashraja.dev" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_Visit_My_Portfolio-ramprakashraja.dev-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio" />
-  </a>
-</div>
+# Initialize the Engineer
+engineer = RamprakashRaja(
+    role="AI Engineer",
+    scholarship="Vector AI Scholar",
+    program="MDSAI Co-op @ UWaterloo",
+    ambassador=["Google", "Microsoft"]
+)
+
+# Fetch Latest Insights
+engineer.analyze_current_status()
+```
+
+### 💻 Console Output:
+
+```bash
+[INFO] 2026-07-26 18:00:00 - Booting RamprakashRaja Engine...
+[SUCCESS] Loaded Identity: AI Engineer & Community Builder
+[STATUS] 1 of 100 Vector AI Scholars in Canada verified.
+[STATUS] Preparing for Master of Data Science and AI at University of Waterloo.
+```
 
 ---
 
-<h2 align="center">🏆 GitHub Achievements & Trophies</h2>
-<p align="center">
-  <a href="https://github.com/ryo-ma/github-profile-trophy">
-    <img src="https://github-profile-trophy.vercel.app/?username=RamprakashRP&theme=radical&no-frame=true&no-bg=true&margin-w=15" alt="Trophies" />
-  </a>
+<h2 align="left">🤖 Live AI Agent Status</h2>
+<p align="left">
+  <i>Every day, an autonomous Gemini AI agent analyzes my recent GitHub activity and generates a live report on what I'm building.</i>
+</p>
+
+> **Agent Report (Auto-Updated):**
+<!-- AI_AGENT_SUMMARY_START -->
+*The AI Agent is currently booting up... Check back tomorrow for the first live report!*
+<!-- AI_AGENT_SUMMARY_END -->
+
+---
+
+### 🏆 Model Weights & Recognitions
+```json
+{
+  "awards": [
+    {
+      "title": "Vector Scholarship in Artificial Intelligence",
+      "verification": "[Official Vector Institute]",
+      "status": "Awarded"
+    },
+    {
+      "title": "Top 6 Google Student Ambassador (India)",
+      "highlight": "Met with Google CEO Sundar Pichai",
+      "status": "Active"
+    },
+    {
+      "title": "Best Outgoing Student (2022-2026)",
+      "institution": "SRM Institute of Science and Technology",
+      "status": "Awarded"
+    }
+  ]
+}
+```
+*Verify Vector Scholarship:* [Official Announcement](https://vectorinstitute.ai/research-talent/students/scholarships/) | [UWaterloo Feature](https://www.linkedin.com/posts/faculty-of-math_congratulations-to-the-incoming-data-science-activity-7472634210563055616-OFhe)
+
+---
+
+### 🛠️ Neural Architecture (Tech Stack)
+
+```python
+dependencies = {
+    "AI_ML": ["Python", "PyTorch", "TensorFlow"],
+    "Frontend": ["React", "Next.js", "TailwindCSS"],
+    "Backend": ["Node.js", "Supabase", "PostgreSQL"],
+    "Cloud": ["AWS", "Google Cloud", "GitHub Actions"]
+}
+engineer.train_model(dependencies)
+```
+
+<p align="left">
+  <a href="https://www.python.org" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/></a>
+  <a href="https://pytorch.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="40" height="40"/></a>
+  <a href="https://tensorflow.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="40" height="40"/></a>
+  <a href="https://nextjs.org/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original-wordmark.svg" alt="Next.js" width="40" height="40" style="filter: invert(1);"/></a>
+  <a href="https://supabase.com/" target="_blank"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/supabase/supabase-original.svg" alt="Supabase" width="40" height="40"/></a>
 </p>
 
 ---
 
-<h2 align="center">🐍 GitHub Contribution Snake</h2>
+## 📊 Live Metrics & Telemetry
+
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/dist/github-contribution-grid-snake.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/dist/github-contribution-grid-snake.svg">
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/dist/github-contribution-grid-snake.svg">
-  </picture>
+  <img src="https://github-readme-stats.vercel.app/api?username=RamprakashRP&show_icons=true&bg_color=000000&text_color=ffffff&icon_color=00ffcc&title_color=00ffcc&hide_border=true" alt="GitHub Stats" width="48%"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=RamprakashRP&background=000000&border=000000&stroke=00ffcc&ring=00ffcc&fire=ffffff&currStreakNum=ffffff&sideNums=ffffff&currStreakLabel=00ffcc&sideLabels=00ffcc" alt="GitHub Streak Stats" width="48%"/>
 </p>
 
 ---
 
-## ⚡ Analytics & Top Languages
+## 📫 Establish Connection
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://github-readme-stats.vercel.app/api?username=RamprakashRP&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" alt="GitHub Stats" />
-      </td>
-      <td align="center">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RamprakashRP&layout=compact&theme=radical&hide_border=true&bg_color=0D1117" alt="Top Languages" />
-      </td>
-    </tr>
-  </table>
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=RamprakashRP&theme=radical&hide_border=true&background=0D1117" alt="GitHub Streak Stats" />
-</div>
-
----
-
-<h2 align="left">🏅 Official Recognitions</h2>
-<ul>
-  <li><b>Vector Scholarship in Artificial Intelligence</b> — <a href="https://vectorinstitute.ai/research-talent/students/scholarships/">Official Announcement</a> | <a href="https://www.linkedin.com/posts/faculty-of-math_congratulations-to-the-incoming-data-science-activity-7472634210563055616-OFhe">UWaterloo Feature</a></li>
-  <li><b>Top 6 Google Student Ambassador (India)</b> — Met with Google CEO Sundar Pichai at the India AI Impact Summit</li>
-  <li><b>Best Outgoing Student (2022-2026)</b> — SRM Institute of Science and Technology</li>
-</ul>
-
----
-
-## 📫 Let's Connect
-
-<p align="center">
-  <a href="https://ramprakashraja.dev"><img src="https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
-  <a href="https://linkedin.com/in/ramprakashraja"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:contact@ramprakashraja.dev"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-</p>
+- 🌐 **Deep-Dive Case Studies**: [ramprakashraja.dev](https://ramprakashraja.dev)
+- 💼 **Professional Network**: [LinkedIn: Ramprakash Raja](https://www.linkedin.com/in/ramprakashraja)
 
 <br>
 <h2 align="center">"Code. Organize. Inspire. Repeat."</h2>
