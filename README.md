@@ -4,7 +4,7 @@
   <br><br>
 
   <a href="https://ramprakashraja.dev" target="_blank">
-    <img src="https://img.shields.io/badge/🌐_Visit_My_Portfolio-ramprakashraja.dev-000000?style=for-the-badge&logo=vercel&logoColor=white&color=00FFCC" alt="Portfolio" />
+    <img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" />
   </a>
 </div>
 
