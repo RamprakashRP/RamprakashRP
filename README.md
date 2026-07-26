@@ -51,9 +51,11 @@
 ```yaml
 # Neofetch Profile Data
 User: Ramprakash Raja
-Role: AI Engineer & Community Builder
+Role: AI Engineer
+Focus: Community Builder & Freelancer
 Scholar: Vector AI Scholar (1 of 100 in Canada)
 Incoming: MDSAI Co-op @ UWaterloo
+Portfolio: https://ramprakashraja.dev
 Community: Google & Microsoft Student Ambassador
 Website: ramprakashraja.dev
 ```
