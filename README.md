@@ -8,38 +8,20 @@
   </tr>
 </table>
 
-<br>
-
 <h3><code>ram@github ~ $ cat about_me.txt</code></h3>
-<p align="center">
-  Hey, I'm Ramprakash! 👋 I'm an AI Engineer, Freelancer, and a Vector AI Scholar (1 of 100 in Canada) currently incoming as an MDSAI Co-op at UWaterloo. I am deeply passionate about artificial intelligence, community building, and crafting futuristic tech experiences. As a Google & Microsoft Student Ambassador, I love connecting with the community—I even had the honor of meeting Google CEO Sundar Pichai! When I'm not training models, I'm building cool open-source projects.
-</p>
-
-<br>
+<h4 align="center">
+  Hey, I'm Ramprakash! 👋 I'm an <b>AI Engineer</b>, <b>Freelancer</b>, and a <b>Vector AI Scholar</b> (1 of 100 in Canada) currently incoming as an <b>MDSAI Co-op at UWaterloo</b>. I am deeply passionate about <b>Artificial Intelligence</b>, community building, and crafting futuristic tech experiences. As a <b>Google & Microsoft Student Ambassador</b>, I love connecting with the community—I even had the honor of meeting <b>Google CEO Sundar Pichai</b>! When I'm not training models, I'm building cool open-source projects.
+</h4>
 
 <p align="center">
-  <a href="https://ramprakashraja.dev" target="_blank">
-    <img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" />
-  </a>
+  <a href="https://ramprakashraja.dev" target="_blank"><img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" /></a>
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/ramprakashraja" target="_blank">
-    <img src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt="LinkedIn" />
-  </a>&nbsp;&nbsp;
-  <a href="https://www.instagram.com/ramprakash.raja_2004" target="_blank">
-    <img src="https://skillicons.dev/icons?i=instagram&theme=dark" alt="Instagram" />
-  </a>&nbsp;&nbsp;
-  <a href="mailto:ramprakashraja1@gmail.com">
-    <img src="https://skillicons.dev/icons?i=gmail&theme=dark" alt="Email" />
-  </a>
+  <a href="https://www.linkedin.com/in/ramprakashraja" target="_blank"><img src="https://skillicons.dev/icons?i=linkedin&theme=dark" alt="LinkedIn" /></a>
+  <a href="https://www.instagram.com/ramprakash.raja_2004" target="_blank"><img src="https://skillicons.dev/icons?i=instagram&theme=dark" alt="Instagram" /></a>
+  <a href="mailto:ramprakashraja1@gmail.com"><img src="https://skillicons.dev/icons?i=gmail&theme=dark" alt="Email" /></a>
 </p>
-
-<br><br>
-
-</div>
-
-<br><br>
 
 <h3><code>ram@github ~ $ ./contributions.sh</code></h3>
 <img src="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/main/profile-3d-contrib/profile-night-rainbow.svg" alt="3D Isometric Commit Graph" />
