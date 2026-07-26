@@ -1,16 +1,4 @@
 <div align="center">
-  <img src="1.gif" width="100%" height="auto" alt="Banner" />
-
-  <br><br>
-
-  <a href="https://ramprakashraja.dev" target="_blank">
-    <img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" />
-  </a>
-</div>
-
-<br>
-
-<div align="center">
 
 <h3><code>ram@github ~ $ whoami</code></h3>
 <table>
@@ -19,6 +7,18 @@
     <td valign="top"><img src="./ram-info-card.svg" width="490" alt="Neofetch Info Card" /></td>
   </tr>
 </table>
+
+<br>
+
+<a href="https://ramprakashraja.dev" target="_blank">
+  <img src="./portfolio-btn.svg" alt="Futuristic Portfolio Button" />
+</a>
+
+<br><br>
+
+<img src="1.gif" width="100%" height="auto" alt="Banner" />
+
+</div>
 
 <br><br>
 
