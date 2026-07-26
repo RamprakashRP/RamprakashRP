@@ -27,8 +27,21 @@
 
 <br><br>
 
-<h3><code>ram@github ~ $ python telemetry.py</code></h3>
-<img src="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/main/github-metrics.svg" alt="Detailed GitHub Metrics Dashboard" />
+<h3><code>ram@github ~ $ cat tech_stack.json</code></h3>
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,nextjs,tailwind,nodejs,supabase,postgres,python,pytorch,tensorflow,aws,gcp,githubactions&theme=dark" alt="3D Tech Stack Icons" />
+  </a>
+</p>
+
+<br><br>
+
+<h3><code>ram@github ~ $ ./play_snake.sh</code></h3>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/snake.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/snake.svg">
+  <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/RamprakashRP/RamprakashRP/output/snake.svg">
+</picture>
 
 <br><br>
 
