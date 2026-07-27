@@ -47,17 +47,17 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
     
     # We use the alpha channel directly as the mask!
     final_mask = img_resized.split()[-1]
-    # Invert the alpha to be 0 for foreground and 255 for background (as used below)
-    final_mask = ImageOps.invert(final_mask)
+    # Do NOT invert! We want 255 for foreground, 0 for background.
     
     black_bg = Image.new('RGB', (300, 340), (0, 0, 0))
-    black_bg.paste(img_resized.convert('RGB'), mask=img_resized.split()[-1])
+    black_bg.paste(img_resized.convert('RGB'), mask=final_mask)
     
     img = ImageOps.autocontrast(black_bg, cutoff=1)
     img = img.filter(ImageFilter.UnsharpMask(radius=3, percent=140))
     img = ImageEnhance.Contrast(img).enhance(1.5)
     
     gray = img.convert('L')
+    # Use final_mask to keep foreground
     gray = Image.composite(gray, Image.new('L', gray.size, 0), final_mask)
     dithered = np.array(gray.convert('1'))
     
@@ -172,8 +172,8 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
         px, py = rp_ordered[i]
         cx, cy = code_ordered[i]
         
-        rp_c = rp_colors.get(tuple(px), "#ffffff")
-        code_c = code_colors.get(tuple(cx), "#ffffff")
+        rp_c = rp_colors.get((int(px), int(py)), "#ffffff")
+        code_c = code_colors.get((int(cx), int(cy)), "#ffffff")
         
         svg.append(f'<rect width="2" height="2" fill="#ff0000">')
         svg.append(f'  <animate attributeName="x" values="{rx}; {fx}; {fx}; {px}; {px}; {cx}; {cx}; {rx}" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
