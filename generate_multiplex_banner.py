@@ -24,7 +24,6 @@ def get_points(img_array, target_num):
 
 def generate_animated_svg(image_path, rp_logo_path, output_path):
     print("Loading and segmenting image...")
-    # Load image
     orig_img = Image.open(image_path).convert('RGB')
     
     w, h = orig_img.size
@@ -32,29 +31,34 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
     if w / h > target_ratio:
         new_w = int(h * target_ratio)
         left = (w - new_w) // 2
-        no_bg = orig_img.crop((left, 0, left + new_w, h))
+        img_cropped = orig_img.crop((left, 0, left + new_w, h))
     else:
         new_h = int(w / target_ratio)
-        no_bg = orig_img.crop((0, 0, w, new_h))
+        img_cropped = orig_img.crop((0, 0, w, new_h))
         
-    no_bg = no_bg.resize((300, 340), Image.Resampling.LANCZOS)
+    img_resized = img_cropped.resize((300, 340), Image.Resampling.LANCZOS)
     
-    # Geometric body mask (Head + Shoulders)
-    mask = Image.new('L', (300, 340), 0)
-    draw = ImageDraw.Draw(mask)
-    draw.ellipse((90, 20, 210, 180), fill=255)  # Head
-    draw.ellipse((40, 140, 260, 400), fill=255) # Shoulders
-    mask = mask.filter(ImageFilter.GaussianBlur(15))
+    # Floodfill background removal
+    mask = img_resized.copy()
+    for pt in [(0,0), (img_resized.width-1, 0), (0, img_resized.height-1), (img_resized.width-1, img_resized.height-1)]:
+        ImageDraw.floodfill(mask, pt, (255, 0, 255), thresh=30)
+    
+    final_mask = Image.new('L', img_resized.size, 255)
+    for y in range(img_resized.height):
+        for x in range(img_resized.width):
+            if mask.getpixel((x,y)) == (255, 0, 255):
+                final_mask.putpixel((x,y), 0)
+    final_mask = final_mask.filter(ImageFilter.GaussianBlur(2))
     
     black_bg = Image.new('RGB', (300, 340), (0, 0, 0))
-    black_bg.paste(no_bg, mask=mask)
+    black_bg.paste(img_resized, mask=final_mask)
     
     img = ImageOps.autocontrast(black_bg, cutoff=1)
     img = img.filter(ImageFilter.UnsharpMask(radius=3, percent=140))
     img = ImageEnhance.Contrast(img).enhance(1.5)
     
     gray = img.convert('L')
-    gray = Image.composite(gray, Image.new('L', gray.size, 0), mask)
+    gray = Image.composite(gray, Image.new('L', gray.size, 0), final_mask)
     dithered = np.array(gray.convert('1'))
     
     portrait_pts = []
@@ -69,48 +73,50 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
     face_pts = portrait_pts[:num_travellers]
     static_pts = portrait_pts[num_travellers:]
     
-    # 2. Process RP Logo
     print("Processing RP Logo...")
-    try:
-        rp_img = Image.open(rp_logo_path).convert('RGBA')
-        # Simple extraction: non-transparent pixels
-        alpha_rp = rp_img.split()[-1]
-        bbox_rp = alpha_rp.getbbox()
-        if bbox_rp:
-            rp_img = rp_img.crop(bbox_rp)
-        rp_img = rp_img.resize((150, 150), Image.Resampling.LANCZOS)
-        # Center it
-        rp_canvas = Image.new('1', (300, 340), 0)
-        rp_gray = Image.composite(rp_img.convert('L'), Image.new('L', rp_img.size, 0), rp_img.split()[-1])
-        rp_dithered = rp_gray.convert('1')
-        rp_canvas.paste(rp_dithered, (75, 95))
-        rp_arr = np.array(rp_canvas)
-        rp_base_pts = get_points(rp_arr, num_travellers)
-    except Exception as e:
-        print(f"Error loading RP logo: {e}. Generating fallback.")
-        rp_canvas = Image.new('1', (300, 340), 0)
-        draw = ImageDraw.Draw(rp_canvas)
-        draw.text((75, 120), "RP", fill=1, font=ImageFont.load_default())
-        rp_arr = np.array(rp_canvas)
-        rp_base_pts = get_points(rp_arr, num_travellers)
-        
-    # Sort RP points by X coordinate to color R red and P white
-    rp_base_pts.sort(key=lambda p: p[0])
-    # The first half is R, second half is P
+    rp_img = Image.open(rp_logo_path).convert('RGBA')
+    # Resize to keep aspect ratio
+    rp_w, rp_h = rp_img.size
+    scale = 150 / max(rp_w, rp_h)
+    new_rp_w, new_rp_h = int(rp_w * scale), int(rp_h * scale)
+    rp_img = rp_img.resize((new_rp_w, new_rp_h), Image.Resampling.LANCZOS)
     
-    # 3. Process Code Logo < >
-    print("Processing Code Logo...")
+    rp_canvas = Image.new('RGBA', (300, 340), (0, 0, 0, 0))
+    offset_x = (300 - new_rp_w) // 2
+    offset_y = (340 - new_rp_h) // 2
+    rp_canvas.paste(rp_img, (offset_x, offset_y))
+    
+    rp_valid_pts = []
+    rp_colors = {}
+    for y in range(340):
+        for x in range(300):
+            r, g, b, a = rp_canvas.getpixel((x,y))
+            if a > 128:
+                rp_valid_pts.append((x, y))
+                if r > 150 and g < 100 and b < 100:
+                    rp_colors[(x,y)] = "#ff0000"
+                elif r > 150 and g > 150 and b > 150:
+                    rp_colors[(x,y)] = "#ffffff"
+                else:
+                    rp_colors[(x,y)] = "#ff0000" # fallback to red
+                    
+    if len(rp_valid_pts) >= num_travellers:
+        rp_base_pts = random.sample(rp_valid_pts, num_travellers)
+    else:
+        rp_base_pts = rp_valid_pts * (num_travellers // len(rp_valid_pts) + 1)
+        rp_base_pts = rp_base_pts[:num_travellers]
+        
+    print("Processing Code Logo (</>)...")
     code_canvas = Image.new('1', (300, 340), 0)
     draw = ImageDraw.Draw(code_canvas)
-    draw.line([(100, 130), (50, 170), (100, 210)], fill=1, width=15)
-    draw.line([(200, 130), (250, 170), (200, 210)], fill=1, width=15)
+    draw.line([(110, 130), (70, 170), (110, 210)], fill=1, width=12) # <
+    draw.line([(170, 120), (130, 220)], fill=1, width=12)            # /
+    draw.line([(190, 130), (230, 170), (190, 210)], fill=1, width=12) # >
     code_arr = np.array(code_canvas)
     code_pts = get_points(code_arr, num_travellers)
     
-    # 4. Generate Random Start points
     random_pts = [(random.randint(0, 300), random.randint(0, 340)) for _ in range(num_travellers)]
     
-    # 5. Optimal Transport
     print("Running optimal transport Phase 1 (Face -> RP)...")
     start_arr = np.array(face_pts)
     rp_arr_pts = np.array(rp_base_pts)
@@ -130,7 +136,6 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
     svg = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 340" width="100%" height="100%">']
     svg.append('<rect width="100%" height="100%" fill="#000000"/>')
     
-    # Static layers (drifting and fading out when RP logo appears)
     num_groups = 50
     static_groups = [[] for _ in range(num_groups)]
     for i, pt in enumerate(static_pts):
@@ -141,30 +146,22 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
         dx = random.randint(-15, 15)
         dy = random.randint(-15, 15)
         svg.append(f'<path d="{path_str}" stroke="#ff0000" stroke-width="1.5" shape-rendering="crispEdges">')
-        # Opacity: 0; 1; 1; 0; 0; 0; 0; 0
         svg.append(f'  <animate attributeName="opacity" values="0; 1; 1; 0; 0; 0; 0; 0" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
-        # Transform: random -> 0 -> 0 -> drift -> drift -> drift -> drift -> random
         svg.append(f'  <animateTransform attributeName="transform" type="translate" values="{dx*5},{dy*5}; 0,0; 0,0; {dx},{dy}; {dx},{dy}; {dx},{dy}; {dx},{dy}; {dx*5},{dy*5}" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
         svg.append('</path>')
         
-    # Travellers
-    # Calculate RP color assignment (left half red, right half white)
-    # We sorted rp_base_pts earlier, but we need to know the index in the original rp_base_pts.
-    # Actually, we ordered rp_ordered to match face_pts. Let's just check the x coordinate!
-    # The centroid of RP logo is around x=150.
-    
     for i in range(num_travellers):
         rx, ry = random_pts[i]
         fx, fy = face_pts[i]
         px, py = rp_ordered[i]
         cx, cy = code_ordered[i]
         
-        rp_color = "#ff0000" if px < 150 else "#ffffff"
+        rp_c = rp_colors.get((px, py), "#ffffff")
         
         svg.append(f'<rect width="2" height="2" fill="#ff0000">')
         svg.append(f'  <animate attributeName="x" values="{rx}; {fx}; {fx}; {px}; {px}; {cx}; {cx}; {rx}" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
         svg.append(f'  <animate attributeName="y" values="{ry}; {fy}; {fy}; {py}; {py}; {cy}; {cy}; {ry}" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
-        svg.append(f'  <animate attributeName="fill" values="#ff0000; #ff0000; #ff0000; {rp_color}; {rp_color}; #ffffff; #ffffff; #ff0000" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
+        svg.append(f'  <animate attributeName="fill" values="#ff0000; #ff0000; #ff0000; {rp_c}; {rp_c}; #ffffff; #ffffff; #ff0000" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
         svg.append('</rect>')
         
     svg.append('</svg>')
