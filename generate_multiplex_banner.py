@@ -24,8 +24,15 @@ def get_points(img_array, target_num):
 
 def generate_animated_svg(image_path, rp_logo_path, output_path):
     print("Loading and segmenting image...")
-    orig_img = Image.open(image_path).convert('RGB')
+    # Load the PNG with transparent background
+    orig_img = Image.open(image_path).convert('RGBA')
     
+    # Crop based on alpha bounding box
+    alpha = orig_img.split()[-1]
+    bbox = alpha.getbbox()
+    if bbox:
+        orig_img = orig_img.crop(bbox)
+        
     w, h = orig_img.size
     target_ratio = 300 / 340
     if w / h > target_ratio:
@@ -38,20 +45,13 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
         
     img_resized = img_cropped.resize((300, 340), Image.Resampling.LANCZOS)
     
-    # Floodfill background removal
-    mask = img_resized.copy()
-    for pt in [(0,0), (img_resized.width-1, 0), (0, img_resized.height-1), (img_resized.width-1, img_resized.height-1)]:
-        ImageDraw.floodfill(mask, pt, (255, 0, 255), thresh=30)
-    
-    final_mask = Image.new('L', img_resized.size, 255)
-    for y in range(img_resized.height):
-        for x in range(img_resized.width):
-            if mask.getpixel((x,y)) == (255, 0, 255):
-                final_mask.putpixel((x,y), 0)
-    final_mask = final_mask.filter(ImageFilter.GaussianBlur(2))
+    # We use the alpha channel directly as the mask!
+    final_mask = img_resized.split()[-1]
+    # Invert the alpha to be 0 for foreground and 255 for background (as used below)
+    final_mask = ImageOps.invert(final_mask)
     
     black_bg = Image.new('RGB', (300, 340), (0, 0, 0))
-    black_bg.paste(img_resized, mask=final_mask)
+    black_bg.paste(img_resized.convert('RGB'), mask=img_resized.split()[-1])
     
     img = ImageOps.autocontrast(black_bg, cutoff=1)
     img = img.filter(ImageFilter.UnsharpMask(radius=3, percent=140))
@@ -75,7 +75,6 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
     
     print("Processing RP Logo...")
     rp_img = Image.open(rp_logo_path).convert('RGBA')
-    # Resize to keep aspect ratio
     rp_w, rp_h = rp_img.size
     scale = 150 / max(rp_w, rp_h)
     new_rp_w, new_rp_h = int(rp_w * scale), int(rp_h * scale)
@@ -98,7 +97,7 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
                 elif r > 150 and g > 150 and b > 150:
                     rp_colors[(x,y)] = "#ffffff"
                 else:
-                    rp_colors[(x,y)] = "#ff0000" # fallback to red
+                    rp_colors[(x,y)] = "#ff0000"
                     
     if len(rp_valid_pts) >= num_travellers:
         rp_base_pts = random.sample(rp_valid_pts, num_travellers)
@@ -107,13 +106,30 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
         rp_base_pts = rp_base_pts[:num_travellers]
         
     print("Processing Code Logo (</>)...")
-    code_canvas = Image.new('1', (300, 340), 0)
-    draw = ImageDraw.Draw(code_canvas)
-    draw.line([(110, 130), (70, 170), (110, 210)], fill=1, width=12) # <
-    draw.line([(170, 120), (130, 220)], fill=1, width=12)            # /
-    draw.line([(190, 130), (230, 170), (190, 210)], fill=1, width=12) # >
-    code_arr = np.array(code_canvas)
-    code_pts = get_points(code_arr, num_travellers)
+    # Draw brackets < >
+    brackets_canvas = Image.new('1', (300, 340), 0)
+    draw_b = ImageDraw.Draw(brackets_canvas)
+    draw_b.line([(110, 130), (70, 170), (110, 210)], fill=1, width=12) # <
+    draw_b.line([(190, 130), (230, 170), (190, 210)], fill=1, width=12) # >
+    
+    # Draw slash /
+    slash_canvas = Image.new('1', (300, 340), 0)
+    draw_s = ImageDraw.Draw(slash_canvas)
+    draw_s.line([(170, 120), (130, 220)], fill=1, width=12)            # /
+    
+    b_pts = get_points(np.array(brackets_canvas), int(num_travellers * 0.66))
+    s_pts = get_points(np.array(slash_canvas), num_travellers - len(b_pts))
+    
+    # Combine points and keep track of colors
+    code_base_pts = b_pts + s_pts
+    random.shuffle(code_base_pts) # Shuffle so optimal transport is fair
+    
+    code_colors = {}
+    for pt in code_base_pts:
+        if pt in b_pts:
+            code_colors[pt] = "#ffffff" # Brackets are white
+        else:
+            code_colors[pt] = "#ff0000" # Slash is red
     
     random_pts = [(random.randint(0, 300), random.randint(0, 340)) for _ in range(num_travellers)]
     
@@ -125,7 +141,7 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
     rp_ordered = rp_arr_pts[col1]
     
     print("Running optimal transport Phase 2 (RP -> Code)...")
-    code_arr_pts = np.array(code_pts)
+    code_arr_pts = np.array(code_base_pts)
     dist2 = cdist(rp_ordered, code_arr_pts)
     _, col2 = linear_sum_assignment(dist2)
     code_ordered = code_arr_pts[col2]
@@ -156,12 +172,13 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
         px, py = rp_ordered[i]
         cx, cy = code_ordered[i]
         
-        rp_c = rp_colors.get((px, py), "#ffffff")
+        rp_c = rp_colors.get(tuple(px), "#ffffff")
+        code_c = code_colors.get(tuple(cx), "#ffffff")
         
         svg.append(f'<rect width="2" height="2" fill="#ff0000">')
         svg.append(f'  <animate attributeName="x" values="{rx}; {fx}; {fx}; {px}; {px}; {cx}; {cx}; {rx}" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
         svg.append(f'  <animate attributeName="y" values="{ry}; {fy}; {fy}; {py}; {py}; {cy}; {cy}; {ry}" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
-        svg.append(f'  <animate attributeName="fill" values="#ff0000; #ff0000; #ff0000; {rp_c}; {rp_c}; #ffffff; #ffffff; #ff0000" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
+        svg.append(f'  <animate attributeName="fill" values="#ff0000; #ff0000; #ff0000; {rp_c}; {rp_c}; {code_c}; {code_c}; #ff0000" keyTimes="{kt}" dur="14s" repeatCount="indefinite" />')
         svg.append('</rect>')
         
     svg.append('</svg>')
@@ -170,4 +187,4 @@ def generate_animated_svg(image_path, rp_logo_path, output_path):
         f.write("\\n".join(svg))
     print(f"Saved {output_path}")
 
-generate_animated_svg('IMG_2290.jpeg', 'rp-logo.png', 'dithered-animated.svg')
+generate_animated_svg('IMG_2290-without BG.png', 'rp-logo.png', 'dithered-animated.svg')
