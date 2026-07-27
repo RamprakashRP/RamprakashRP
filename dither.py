@@ -59,7 +59,7 @@ def generate_svg(image_path, output_path):
         row = range(300) if y % 2 == 0 else range(299, -1, -1)
         start_x = None
         for x in row:
-            if pixels[y, x] == 255: # White/Bright pixel -> Draw Red Dot
+            if pixels[y, x]: # True/Bright pixel -> Draw Red Dot
                 if start_x is None:
                     start_x = x
             else:
