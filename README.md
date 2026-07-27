@@ -3,7 +3,7 @@
 <h3><code>ram@github ~ $ whoami</code></h3>
 <table>
   <tr>
-    <td valign="top"><img src="./ram-ascii.svg?v=2" width="370" alt="ASCII Portrait" /></td>
+    <td valign="top"><img src="./dithered.svg" width="370" alt="Dithered Portrait" /></td>
     <td valign="top"><img src="./ram-info-card.svg" width="490" alt="Neofetch Info Card" /></td>
   </tr>
 </table>
